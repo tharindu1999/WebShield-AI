@@ -1,0 +1,38 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.pyd
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Streamlit and local configuration
+.streamlit/secrets.toml
+
+# Editors and operating systems
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Logs and temporary files
+*.log
+*.tmp
+*.part
+.playwright-cli/
+output/
+
+# Packaging
+build/
+dist/
+*.egg-info/
+
+# Keep trained artifacts and the assignment dataset
+!data/
+!data/PhiUSIIL_Phishing_URL_Dataset.csv
+!models/
+!models/web_risk_model.pkl
+!models/model_metadata.json

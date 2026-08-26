@@ -1,0 +1,165 @@
+{
+  "model_version": "1.0.0",
+  "algorithm": "Random Forest Classifier",
+  "task": "Binary Classification",
+  "classes": [
+    "Legitimate",
+    "Phishing"
+  ],
+  "label_mapping": {
+    "source_uci": {
+      "0": "Phishing",
+      "1": "Legitimate"
+    },
+    "webshield_normalized": {
+      "0": "Legitimate",
+      "1": "Phishing"
+    }
+  },
+  "dataset": "PhiUSIIL Phishing URL Website Dataset",
+  "dataset_source": "UCI Machine Learning Repository",
+  "dataset_id": 967,
+  "dataset_license": "CC BY 4.0",
+  "random_seed": 42,
+  "selected_features": [
+    "URLLength",
+    "DomainLength",
+    "IsDomainIP",
+    "TLDLength",
+    "NoOfSubDomain",
+    "IsHTTPS",
+    "HasTitle",
+    "HasFavicon",
+    "HasDescription",
+    "NoOfiFrame",
+    "HasExternalFormSubmit",
+    "HasSubmitButton",
+    "HasHiddenFields",
+    "HasPasswordField",
+    "NoOfImage",
+    "NoOfCSS",
+    "NoOfJS",
+    "NoOfSelfRef",
+    "NoOfEmptyRef",
+    "NoOfExternalRef"
+  ],
+  "selected_feature_count": 20,
+  "url_feature_policy": "URL-derived columns are recomputed from raw URL with the shared inference function.",
+  "training_sample_count": 188296,
+  "testing_sample_count": 47074,
+  "class_distribution": {
+    "Legitimate": 134850,
+    "Phishing": 100520
+  },
+  "training_timestamp": "2026-08-28T05:21:49.799166+00:00",
+  "metrics": {
+    "accuracy": 0.998937842545779,
+    "precision_phishing": 0.9989053637177828,
+    "recall_phishing": 0.9986072423398329,
+    "f1_phishing": 0.9987562807820507,
+    "roc_auc": 0.9999563707357263,
+    "confusion_matrix": [
+      [
+        26948,
+        22
+      ],
+      [
+        28,
+        20076
+      ]
+    ]
+  },
+  "global_feature_importance": [
+    {
+      "feature": "NoOfSelfRef",
+      "importance": 0.2330840993355993
+    },
+    {
+      "feature": "NoOfExternalRef",
+      "importance": 0.2323976958683447
+    },
+    {
+      "feature": "NoOfImage",
+      "importance": 0.14685893349140353
+    },
+    {
+      "feature": "NoOfJS",
+      "importance": 0.11658804226504031
+    },
+    {
+      "feature": "NoOfCSS",
+      "importance": 0.06905292784051262
+    },
+    {
+      "feature": "HasDescription",
+      "importance": 0.05273091582476456
+    },
+    {
+      "feature": "IsHTTPS",
+      "importance": 0.033833964753617725
+    },
+    {
+      "feature": "URLLength",
+      "importance": 0.03229104254890952
+    },
+    {
+      "feature": "HasSubmitButton",
+      "importance": 0.023730692005317976
+    },
+    {
+      "feature": "NoOfEmptyRef",
+      "importance": 0.017314922224027078
+    },
+    {
+      "feature": "NoOfSubDomain",
+      "importance": 0.012322923833619768
+    },
+    {
+      "feature": "HasHiddenFields",
+      "importance": 0.007538103187697874
+    },
+    {
+      "feature": "DomainLength",
+      "importance": 0.006942174454708587
+    },
+    {
+      "feature": "NoOfiFrame",
+      "importance": 0.00589663910916748
+    },
+    {
+      "feature": "HasFavicon",
+      "importance": 0.005334963101474166
+    },
+    {
+      "feature": "HasTitle",
+      "importance": 0.0017660094055022522
+    },
+    {
+      "feature": "TLDLength",
+      "importance": 0.0011492484625852646
+    },
+    {
+      "feature": "HasPasswordField",
+      "importance": 0.0010329876624444402
+    },
+    {
+      "feature": "HasExternalFormSubmit",
+      "importance": 8.40459198098993e-05
+    },
+    {
+      "feature": "IsDomainIP",
+      "importance": 4.966870545311201e-05
+    }
+  ],
+  "dataset_records": 235795,
+  "exact_duplicate_urls_removed": 425,
+  "unusable_records_removed": 0,
+  "records_used": 235370,
+  "random_forest_parameters": {
+    "n_estimators": 160,
+    "max_depth": 22,
+    "min_samples_leaf": 2,
+    "max_features": "sqrt",
+    "class_weight": "balanced_subsample"
+  }
+}
