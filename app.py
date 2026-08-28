@@ -54,24 +54,32 @@ def show_model_details(metadata: dict) -> None:
         metrics = metadata["metrics"]
         columns = st.columns(5)
         labels = [
-            ("Accuracy", "accuracy"),
-            ("Precision", "precision_phishing"),
-            ("Recall", "recall_phishing"),
-            ("F1 Score", "f1_phishing"),
-            ("ROC AUC", "roc_auc"),
+            ("Test Accuracy", "accuracy"),
+            ("Test Precision", "precision_phishing"),
+            ("Test Recall", "recall_phishing"),
+            ("Test F1 Score", "f1_phishing"),
+            ("Test ROC AUC", "roc_auc"),
         ]
         for column, (label, key) in zip(columns, labels):
-            column.metric(label, metric_percent(metrics[key]))
+            value = f"{metrics[key]:.5f}" if key == "roc_auc" else metric_percent(metrics[key])
+            column.metric(label, value)
 
         matrix = pd.DataFrame(
             metrics["confusion_matrix"],
             index=["Actual Legitimate", "Actual Phishing"],
             columns=["Predicted Legitimate", "Predicted Phishing"],
         )
+        checks = metadata["overfitting_checks"]
+        st.caption(
+            f"Training accuracy: {metric_percent(checks['training_accuracy'])} | "
+            f"Testing accuracy: {metric_percent(checks['testing_accuracy'])} | "
+            f"Gap: {checks['accuracy_gap'] * 100:.3f} percentage points"
+        )
         st.caption(
             f"Training samples: {metadata['training_sample_count']:,} | "
             f"Testing samples: {metadata['testing_sample_count']:,}"
         )
+        st.caption("Test confusion matrix")
         st.dataframe(matrix, use_container_width=True)
 
 def main() -> None:

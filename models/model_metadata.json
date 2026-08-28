@@ -51,7 +51,24 @@
     "Legitimate": 134850,
     "Phishing": 100520
   },
-  "training_timestamp": "2026-08-28T05:21:49.799166+00:00",
+  "training_timestamp": "2026-08-28T14:28:53.051338+00:00",
+  "training_metrics": {
+    "accuracy": 0.9997238390619025,
+    "precision_phishing": 0.9996518279035066,
+    "recall_phishing": 0.9997015519299642,
+    "f1_phishing": 0.9996766892984158,
+    "roc_auc": 0.9999997857129208,
+    "confusion_matrix": [
+      [
+        107852,
+        28
+      ],
+      [
+        24,
+        80392
+      ]
+    ]
+  },
   "metrics": {
     "accuracy": 0.998937842545779,
     "precision_phishing": 0.9989053637177828,
@@ -68,6 +85,14 @@
         20076
       ]
     ]
+  },
+  "overfitting_checks": {
+    "training_accuracy": 0.9997238390619025,
+    "testing_accuracy": 0.998937842545779,
+    "accuracy_gap": 0.0007859965161235438,
+    "test_rows_matching_a_training_feature_vector": 15546,
+    "matching_test_row_fraction": 0.33024599566639756,
+    "identical_feature_groups_with_conflicting_labels": 0
   },
   "global_feature_importance": [
     {
